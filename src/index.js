@@ -106,7 +106,7 @@ function App() {
       courseNumber
     ).then((data) => {
       data.filter((data) => {
-        data.Detail != 'No Credit';
+        data.Detail.toLowerCase().trim() != 'no credit';
       });
       //Uncomment if you don't want credit values displayed, but it does mess with some data (more work would be required)
       //data.map((data) => {data.Detail = data.Detail.split('(')[0]});
