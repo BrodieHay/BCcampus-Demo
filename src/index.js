@@ -165,27 +165,30 @@ function App() {
           </Button>
         </Grid>
       </Grid>
-      <Grid
-        container
-        spacing={2}
-        direction="row"
-        justifyContent="flex-end"
-        alignItems="flex-start"
-      ></Grid>
+
 
       <br />
       <section className="course-container">
         <Typography variant="h6" gutterBottom>
           Transfers To
         </Typography>
-        {transferableCourses?.map((transferableCourse) => (
-          <TransferableCourse
-            key={transferableCourse.Id}
-            id={transferableCourse.Id}
-            title={transferableCourse.RcvrInstitutionCode}
-            body={transferableCourse.Detail}
-          />
-        ))}
+        <Grid
+            container
+            spacing={1}
+            direction="row"
+            justifyContent="flex-start"
+            alignItems="flex-start">
+          {transferableCourses?.map((transferableCourse) => (
+            <Grid item>
+              <TransferableCourse
+                key={transferableCourse.Id}
+                id={transferableCourse.Id}
+                title={transferableCourse.RcvrInstitutionCode}
+                body={transferableCourse.Detail}
+              />
+            </Grid>
+          ))}
+        </Grid>
       </section>
       <br />
     </main>
